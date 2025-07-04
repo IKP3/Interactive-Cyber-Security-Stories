@@ -1,0 +1,22 @@
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Export ###
+*.pdf
+*.txt
+*.tex
+*.out
+*.log
+*.aux
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+
+### Mac OS ###
+.DS_Store
+
+/.idea/
+/out/

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ip1g22.interactivecybersecuritystories.MainController">
+   <center>
+      <SplitPane fx:id="TextAreas" dividerPositions="0.5" minWidth="-Infinity" prefHeight="347.0" prefWidth="544.0" BorderPane.alignment="CENTER">
+        <items>
+            <TextArea fx:id="inputTextArea" prefHeight="400.0" prefWidth="400.0" wrapText="true" />
+            <VBox fx:id="processedOutput" alignment="TOP_CENTER" prefHeight="345.0" prefWidth="219.0" />
+        </items>
+      </SplitPane>
+   </center>
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="fileMenuOpenFile" mnemonicParsing="false" text="Open file" />
+                  <Menu mnemonicParsing="false" text="Export">
+                    <items>
+                        <MenuItem fx:id="fileMenuExportLatex" mnemonicParsing="false" text="Export  as LaTeX" />
+                        <MenuItem fx:id="fileMenuExportPdf" mnemonicParsing="false" text="Export as PDF" />
+                        <MenuItem fx:id="fileMenuExportPdfPrintable" mnemonicParsing="false" text="Export as printable PDF" />
+                        <MenuItem fx:id="fileMenuExportTxt" mnemonicParsing="false" text="Export as TXT" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="helpAboutButton" mnemonicParsing="false" text="About" />
+                  <MenuItem fx:id="helpSyntaxButton" mnemonicParsing="false" text="Syntax Help" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Preferences">
+               <items>
+                  <Menu mnemonicParsing="false" text="Themes">
+                    <items>
+                        <MenuItem fx:id="preferencesLightThemeButton" mnemonicParsing="false" text="Light Theme" />
+                        <MenuItem fx:id="preferencesDarkThemeButton" mnemonicParsing="false" text="Dark Theme" />
+                        <MenuItem fx:id="preferencesHighContrastThemeButton" mnemonicParsing="false" text="High Contrast" />
+                    </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Library">
+              <items>
+                <MenuItem fx:id="theStrangeEmail" mnemonicParsing="false" text="The Strange Email" />
+                  <MenuItem fx:id="suspiciousNetwork" mnemonicParsing="false" text="Suspicious Network" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <Button fx:id="compileButton" mnemonicParsing="false" onAction="#onCompileButtonClick" text="Compile" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <VBox prefHeight="347.0" prefWidth="66.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#switchToMainView" prefHeight="25.0" prefWidth="66.0" text="Main">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#switchToDiagramView" prefHeight="24.0" prefWidth="66.0" text="Diagram">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="30.0" mnemonicParsing="false" onAction="#switchToPlayView" prefHeight="25.0" prefWidth="66.0" text="Play">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
